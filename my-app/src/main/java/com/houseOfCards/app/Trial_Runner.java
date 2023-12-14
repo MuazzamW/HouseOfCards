@@ -186,25 +186,21 @@ public class Trial_Runner
         matches=numMatches();
         earnings = payout.get(matches);
         netGain = earnings-WAGER;
-        System.out.println(String.format("%d, %d, %d, %d", spin1,spin2,matches,earnings));
 
         deck.addBack(WINNING_CARDS);
         tray.empty();
         finalHand.clear();
+
         int[] nums = {spin1, spin2, matches, earnings, netGain};
-       
         String[] line = Arrays.stream(nums) 
             .mapToObj(String::valueOf) 
             .toArray(String[]::new);
     
-        
-        
-        System.out.println(line);
         handler.writeToCSV(line);
         
     }
 
-    private int numMatches(){//error here
+    private int numMatches(){
         System.out.println(finalHand);
         return finalHand.stream().filter(card -> WINNING_CARDS.contains(card)).collect(Collectors.toList()).size();
     }

@@ -12,7 +12,7 @@ import com.opencsv.*;
 public class SheetHandler {
 
     private static URL csvURL = SheetHandler.class.getClassLoader().getResource("trials.csv");
-    //filewriter(csvURL.getFile());
+    
     private FileWriter writer;
     private FileReader reader;
     public static File csv = new File(csvURL.getFile());
@@ -33,18 +33,12 @@ public class SheetHandler {
     }
 
     public void readDataLineByLine(){
-         try { 
-  
-        // Create an object of filereader 
-        // class with CSV file as a parameter. 
+         try {  
         reader = new FileReader(csv); 
   
-        // create csvReader object passing 
-        // file reader as a parameter 
         CSVReader csvReader = new CSVReader(reader); 
         String[] nextRecord; 
-  
-        // read data line by line 
+
         while ((nextRecord = csvReader.readNext()) != null) { 
             for (String cell : nextRecord) { 
                 System.out.print(cell + "\t"); 
@@ -62,7 +56,6 @@ public class SheetHandler {
     public void writeToCSV(String[] args) throws IOException{
         csvWriter = new CSVWriter(writer);
         csvWriter.writeNext(args);    
-        //csvWriter.close();
     }
 
     public void clearCsv() throws Exception {
