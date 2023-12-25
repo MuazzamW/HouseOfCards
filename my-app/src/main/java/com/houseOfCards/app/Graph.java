@@ -90,12 +90,6 @@ public class Graph extends JFrame {
         System.out.println(String.format("%d, %d",outcome,frequency));
         dataset.addValue(frequency/numTrials, outcome, outcome);
     }   
-    
-    /*
-    dataset.addValue(10, "USA", "2005");  
-    dataset.addValue(15, "India", "2005");  
-    dataset.addValue(20, "China", "2005");  
-    */
   
     return dataset;  
   }   
