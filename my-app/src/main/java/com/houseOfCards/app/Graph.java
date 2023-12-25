@@ -87,7 +87,7 @@ public class Graph extends JFrame {
     for (Map.Entry<Integer, Integer> entry : dataSet.entrySet()) {
         Integer outcome = entry.getKey();
         Integer frequency = entry.getValue();
-        System.out.println(String.format("%d, %d",outcome,frequency));
+        //System.out.println(String.format("%d, %d",outcome,frequency));
         dataset.addValue(frequency/numTrials, outcome, outcome);
     }   
   
