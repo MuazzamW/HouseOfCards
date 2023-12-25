@@ -33,8 +33,8 @@ public class SheetHandler {
     }
 
     public void readDataLineByLine(){
-         try {  
-        reader = new FileReader(csv); 
+        try {  
+            reader = new FileReader(csv); 
   
         CSVReader csvReader = new CSVReader(reader); 
         String[] nextRecord; 
@@ -68,6 +68,10 @@ public class SheetHandler {
 
     public void closeWriter() throws IOException{
         csvWriter.close();
+    }
+
+    public static URL getCSVURL(){
+        return csvURL;
     }
 
     
